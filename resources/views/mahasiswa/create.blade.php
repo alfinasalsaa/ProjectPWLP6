@@ -12,8 +12,7 @@
             <div class="card-body">
                 @if ($errors->any())
                 <div class="alert alert-danger">
-                    <strong>Whoops!</strong> There were some problems with your i
-nput.<br><br>
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -21,8 +20,7 @@ nput.<br><br>
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ route('mahasiswa.store') }}" id="myFo
-rm">
+            <form method="post" action="{{ route('mahasiswa.store') }}" id="myForm">
             @csrf
                 <div class="form-group">
                     <label for="Nim">Nim</label>
@@ -33,8 +31,16 @@ rm">
                     <input type="Nama" name="Nama" class="formcontrol" id="Nama" aria-describedby="Nama" >
                 </div>
                 <div class="form-group">
+                <label for="Tanggal_Lahir">Tanggal Lahir</label>
+                <input type="date" name="Tanggal_Lahir" class="formcontrol" id="Tanggal_Lahir" aria-describedby="Tanggal_Lahir" >
+            </div>
+                <div class="form-group">
                     <label for="Kelas">Kelas</label> 
-                    <input type="Kelas" name="Kelas" class="formcontrol" id="Kelas" aria-describedby="password" >
+                    <select name="Kelas" class="form-control">
+                        @foreach ($kelas as $Kelas)
+                        <option value="{{$Kelas->id}}">{{$Kelas->nama_kelas}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="Jurusan">Jurusan</label>
@@ -45,6 +51,10 @@ rm">
 
                     <input type="No_Handphone" name="No_Handphone" class="formcontrol" id="No_Handphone" aria-describedby="No_Handphone" >
                 </div>
+                <div class="form-group">
+                <label for="Email">E-Mail</label>
+                <input type="Email" name="Email" class="formcontrol" id="Email" aria-describedby="Email" >
+            </div>
         <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>

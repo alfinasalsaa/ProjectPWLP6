@@ -11,11 +11,11 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><b>Nim: </b>{{$Mahasiswa->Nim}}</li>
                     <li class="list-group-item"><b>Nama: </b>{{$Mahasiswa->Nama}}</li>
-                    <li class="list-group-item"><b>Tanggal Lahir: </b>{{$Mahasiswa->Tanggal Lahir}}</li>
-                    <li class="list-group-item"><b>Kelas: </b>{{$Mahasiswa->Kelas}}</li>
+                    <li class="list-group-item"><b>Tanggal_Lahir: </b>{{$Mahasiswa->Tanggal_Lahir}}</li>
+                    <li class="list-group-item"><b>Kelas: </b>{{$Mahasiswa->Kelas->nama_kelas}}</li>
                     <li class="list-group-item"><b>Jurusan: </b>{{$Mahasiswa->Jurusan}}</li>
                     <li class="list-groupitem"><b>No_Handphone: </b>{{$Mahasiswa->No_Handphone}}</li>
-                    <li class="list-group-item"><b>E-Mail: </b>{{$Mahasiswa->E-Mail}}</li>
+                    <li class="list-group-item"><b>EMail: </b>{{$Mahasiswa->EMail}}</li>
                 </ul>
             </div>
             <a class="btn btn-success mt3" href="{{ route('mahasiswa.index') }}">Kembali</a>

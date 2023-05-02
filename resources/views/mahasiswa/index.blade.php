@@ -32,16 +32,15 @@
     @foreach ($mahasiswa as $Mahasiswa)
     <tr>
 
-    <td>{{ $Mahasiswa->Nim }}</td>
-    <td>{{ $Mahasiswa->Nama }}</td>
-    <td>{{ $Mahasiswa->Tanggal_Lahir }}</td>
-    <td>{{ $Mahasiswa->Kelas }}</td>
-    <td >{{ $Mahasiswa->Jurusan }}</td>
-    <td>{{ $Mahasiswa->No_Handphone }}</td>
-    <td>{{ $Mahasiswa->Email }}</td>
-    <td>
+        <td>{{ $Mahasiswa->Nim }}</td>
+        <td>{{ $Mahasiswa->Nama }}</td>
+        <td>{{ $Mahasiswa->Tanggal_Lahir }}</td>
+        <td>{{ $Mahasiswa->Kelas->nama_kelas }}</td>
+        <td>{{ $Mahasiswa->Jurusan }}</td>
+        <td>{{ $Mahasiswa->No_Handphone }}</td>
+        <td>{{ $Mahasiswa->Email }}</td>
+        <td>
     <form action="{{ route('mahasiswa.destroy',$Mahasiswa->Nim) }}" method="POST">
-
         <a class="btn btn-info" href="{{ route('mahasiswa.show',$Mahasiswa->Nim) }}">Show</a>
         <a class="btn btn-primary" href="{{ route('mahasiswa.edit',$Mahasiswa->Nim) }}">Edit</a>
         @csrf
@@ -52,4 +51,7 @@
         </tr>
         @endforeach
     </table>
+    <div>
+        {!! $mahasiswa->withQueryString()->links('pagination::bootstrap-5')!!}
+    </div>
 @endsection

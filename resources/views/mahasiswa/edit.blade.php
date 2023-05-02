@@ -33,11 +33,15 @@
             </div>
             <div class="form-group">
                 <label for="Tanggal_Lahir">Tanggal Lahir</label>
-                <input type="Tanggal_Lahir" name="Tanggal_Lahir" class="formcontrol" id="Tanggal_Lahir" value="{{ $Mahasiswa->Tanggal_Lahir }}" ariadescribedby="Nama" >
+                <input type="date" name="Tanggal_Lahir" class="formcontrol" id="Tanggal_Lahir" value="{{ $Mahasiswa->Tanggal_Lahir }}" ariadescribedby="Nama" >
             </div>
             <div class="form-group">
                 <label for="Kelas">Kelas</label>
-                <input type="Kelas" name="Kelas" class="formcontrol" id="Kelas" value="{{ $Mahasiswa->Kelas }}" ariadescribedby="Kelas" >
+                <select name="Kelas" class="form-control">
+                    @foreach ($kelas as $Kelas)
+                    <option value="{{$Kelas->id}}">{{$Kelas->nama_kelas}}</option>
+                    @endforeach
+                </select>    
             </div>
             <div class="form-group">
                 <label for="Jurusan">Jurusan</label>

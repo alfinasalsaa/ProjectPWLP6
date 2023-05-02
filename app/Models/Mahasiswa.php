@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Mahasiswa;
 
 class Mahasiswa extends Model
 {
@@ -22,12 +23,16 @@ class Mahasiswa extends Model
     protected $fillable = [
         'Nim',
         'Nama',
-        'Tanggal_Lahir',
-        'Kelas',
+        'Tanngal_Lahir',
         'Jurusan',
         'No_Handphone',
-        'Email'
+        'Email',
+        'Kelas_id'
     ];
+
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
+    }
 
     
 }

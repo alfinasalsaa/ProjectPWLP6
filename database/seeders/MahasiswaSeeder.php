@@ -14,14 +14,16 @@ class MahasiswaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mahasiswa')->insert([
-            'Nim'=>'2141720044',
-            'Nama'=> 'Alfina Salsabilla',
-            'Kelas'=> 'TI-2G',
-            'Jurusan'=> 'Teknologi Informasi',
-            'No_Handphone'=> '082338194940'
+        //
+        //
+        // DB::table('mahasiswa')->insert([
+        //     'Nim'=>'2141720044',
+        //     'Nama'=> 'Alfina Salsabilla',
+        //     'Kelas'=> 'TI-2G',
+        //     'Jurusan'=> 'Teknologi Informasi',
+        //     'No_Handphone'=> '082338194940'
             
 
-        ]);
+        // ]);
     }
 }

@@ -34,7 +34,6 @@
             @endforeach
         </tbody>
     </table>
-    <a href="{{ route('mahasiswa.index') }}" class="btn btn-success">Kembali</a>
-    <a href="{{ route('cetak_pdf', $Mahasiswa->Nim) }}" class="btn btn-primary">Cetak PDF</a>
+    
 </div>
 @endsection
